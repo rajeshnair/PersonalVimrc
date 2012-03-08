@@ -88,4 +88,16 @@ iab anf and
 iab adn and
 iab ans and
 iab teh the
+iab eth the
 iab thre there
+
+"My Doxygent Toolkit variables
+let g:DoxygenToolkit_briefTag_pre="@Synopsis  " 
+let g:DoxygenToolkit_paramTag_pre="@Param " 
+let g:DoxygenToolkit_returnTag="@Returns   " 
+let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
+let g:DoxygenToolkit_blockFooter="--------------------------------------------------------------------------" 
+let g:DoxygenToolkit_authorName="Rajesh Nair <rajenair@paypal.com>" 
+let g:DoxygenToolkit_licenseTag="This file and its content are copyright of PayPal Inc."  
+
+au FileType cpp set makeprg=mm\ make\ %:r.o
