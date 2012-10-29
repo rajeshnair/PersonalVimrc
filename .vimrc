@@ -17,7 +17,8 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set smarttab
-set textwidth=80
+set textwidth=80       " break lines when line length increases
+set columns=80
 
 "set backspace . Can't seem to work without it 
 set backspace=indent,eol,start
