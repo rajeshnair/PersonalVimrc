@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/rajeshnair/workspace/SourceCommons/src/main'
+let g:netrw_dirhist_2='/home/rajeshnair/workspace/SourceCommons/src/main/java'
+let g:netrw_dirhist_3='/home/rajeshnair/workspace/SourceCommons/src/main/java/com'
+let g:netrw_dirhist_4='/home/rajeshnair/workspace/SourceCommons/src/main/java/com/x'
+let g:netrw_dirhist_5='/home/rajeshnair/workspace/SourceCommons/src/main/java/com/x/source'
+let g:netrw_dirhist_6='/home/rajeshnair/workspace/SourceCommons/src/main/java/com/x/source/lib'
+let g:netrw_dirhist_7='/home/rajeshnair/workspace/SourceCommons/src/main/java/com/x/source/lib/socket'

@@ -1,6 +1,5 @@
 set nocp
 filetype plugin on
-set tags=$BUILDTOP/all.tags
 
 
 " Enable syntax highlighting.
@@ -15,10 +14,10 @@ set smartindent
 " I didn't find a good reason to not use it everywhere.
 set shiftwidth=4
 set tabstop=4
-set expandtab
+"set expandtab
 set smarttab
-set textwidth=80       " break lines when line length increases
-set columns=80
+"set textwidth=80       " break lines when line length increases
+"set columns=80
 
 "set backspace . Can't seem to work without it 
 set backspace=indent,eol,start
@@ -96,8 +95,8 @@ iab thre there
 "My Doxygent Toolkit variables
 let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
 let g:DoxygenToolkit_blockFooter="--------------------------------------------------------------------------" 
-let g:DoxygenToolkit_authorName="Rajesh Nair <rajenair@paypal.com>" 
-let g:DoxygenToolkit_licenseTag="This file and its content are copyright of PayPal Inc."  
+let g:DoxygenToolkit_authorName="Rajesh Nair <rajesh@webaction.com>" 
+let g:DoxygenToolkit_licenseTag="This file and its content are copyright of WebAction Inc."  
 
 au FileType cpp set makeprg=mm\ make\ %:r.o
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
@@ -132,3 +131,27 @@ function! DoPrettyXML()
   exe "set ft=" . l:origft
 endfunction
 command! PrettyXML call DoPrettyXML()
+
+
+" configure tags - add additional tags here or comment out not-used ones
+set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/agent
+set tags+=~/.vim/tags/sourcelib
+set tags+=~/.vim/tags/posdataeader
+set tags+=~/.vim/tags/cdclistener
+set tags+=~/.vim/tags/sysinclude
+" build tags of your own project with Ctrl-F12
+map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
