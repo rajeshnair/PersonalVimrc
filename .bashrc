@@ -22,3 +22,43 @@ function findprocid() {
 	ps aux | grep $1 | grep -v grep | tr -s ' ' | cut -d " " -f 2
 }
 
+function updatesvn() {
+	SVN_ROOT='/home/rajeshnair/workspace';
+	cd $SVN_ROOT;
+
+	for D in `ls -d */`
+		do
+			echo "===========Udpating $D==================="
+			cd $D;
+			svn up;
+			cd -;
+		done
+
+}
+
+function listchangedrepos() {
+	SVN_ROOT='/home/rajeshnair/workspace';
+	cd $SVN_ROOT;
+
+	for D in `ls -d */`
+		do
+			echo "===========Checking  $D==================="
+			cd $D;
+			svn st;
+			cd -;
+		done
+}
+
+function foreachrepo() {
+	SVN_ROOT='/home/rajeshnair/workspace';
+	cd $SVN_ROOT;
+	echo "===========Trying to execute $1 in each repo===================="
+
+	for D in `ls -d */`
+		do
+			echo "===========Checking  $D==================="
+			cd $D;
+			`$1`;
+			cd -;
+		done
+}
