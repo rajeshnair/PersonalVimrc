@@ -1,4 +1,11 @@
-I have decided to use github for sharing my vimrc file.
-I will decide to share Linux specific other configuration 
-files , if required.
+My Portable C++ IDE :)
+========================================
+
+Steps to deploy : Be warned that this will override your vimrc and bashrc file. 
+1. git clone https://github.com/rajeshnair/PersonalVimrc
+2. cd PersonalVimrc
+3. make
+
+
+
 
