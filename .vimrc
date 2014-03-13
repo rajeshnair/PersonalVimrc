@@ -14,8 +14,9 @@ set smartindent
 " I didn't find a good reason to not use it everywhere.
 set shiftwidth=4
 set tabstop=4
-"set expandtab
+set expandtab
 set smarttab
+set ff=unix
 "set textwidth=80       " break lines when line length increases
 "set columns=80
 
@@ -99,7 +100,7 @@ let g:DoxygenToolkit_authorName="Rajesh Nair <rajesh@webaction.com>"
 let g:DoxygenToolkit_licenseTag="This file and its content are copyright of WebAction Inc."  
 
 au FileType cpp set makeprg=mm\ make\ %:r.o
-au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+"au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 au FileType sdl exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 au FileType oml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
