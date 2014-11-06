@@ -1,5 +1,5 @@
 set nocp
-filetype plugin on
+filetype plugin indent on
 
 
 " Enable syntax highlighting.
@@ -17,8 +17,8 @@ set tabstop=4
 set expandtab
 set smarttab
 set ff=unix
-"set textwidth=80       " break lines when line length increases
-"set columns=80
+set textwidth=160       " break lines when line length increases
+" set columns=160
 
 "set backspace . Can't seem to work without it 
 set backspace=indent,eol,start
