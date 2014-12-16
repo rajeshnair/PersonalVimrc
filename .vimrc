@@ -81,6 +81,9 @@ set foldmethod=indent
 " Error bells are displayed visually.
 set visualbell
 
+" load vim config for each plugins
+runtime! config/**/*.vim
+
 "save your Pinky. set wq irrespective of its shit status 
 :command WQ wq
 :command Wq wq
