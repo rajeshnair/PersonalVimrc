@@ -5,32 +5,36 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
+source /Users/rajeshnair/projects/PersonalVimrc/.git-completion.bash
+source /Users/rajeshnair/projects/PersonalVimrc/.git-prompt.sh
 PS1='\t \W $(__git_ps1 " (%s)")\$ '
+
+source /Users/rajeshnair/.maven_autocomplete.bash
 
 # User specific aliases and functions
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
-
-export OSS_ASN1_JAVA=/Users/rajeshnair/projects/oss/asn1pjav/macosx-x86.trial/6.0.0
-export OSSINFO=/Users/rajeshnair/projects/oss/asn1pjav/macosx-x86.trial/6.0.0
-export OSSINFOTRIAL=$OSS_ASN1_JAVA
+export SPARK_HOME="/Users/rajeshnair/installs/spark-1.4.0-bin-custom-spark"
+export ORACLE_HOME="/Applications/oracle/product/instantclient_64/11.2.0.4.0"
 export MAVEN_OPTS="-Xms128m -Xmx2048m -XX:MaxPermSize=1024m"
-export M2_HOME=/Users/rajeshnair/devenv/apache-maven-3.0.5
+export M2_HOME=/Users/rajeshnair/devenv/apache-maven-3.2.5
 export M2=$M2_HOME/bin
-export PATH=$PATH:$M2:/Users/rajeshnair/projects/oss/asn1pjav/macosx-x86.trial/6.0.0/bin
+export PATH=$PATH:$M2:$ORACLE_HOME/bin:$SPARK_HOME/bin:$SPARK_HOME/sbin:/usr/local/octave/3.8.0/bin
+export DYLD_LIBRARY_PATH=$ORACLE_HOME/lib
+
+
 export EDITOR=vim
-export CLASSPATH=".:/usr/local/lib/antlr-4.0-complete.jar:$OSSINFO/lib/oss.jar:$CLASSPATH"
+export CLASSPATH=".:/usr/local/lib/antlr-4.0-complete.jar:$CLASSPATH"
 export DERBY_OPTS='-Dij.database="jdbc:derby://localhost:1527/wactionrepos;user=waction;password=waction;create=true"'
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
-
-export PRODUCT=/Users/rajeshnair/projects/webaction/Product
+export PRODUCT=/Users/rajeshnair/projects/striim/Product
 export APPLICATION=/Users/rajeshnair/projects/webaction/Applications
 alias bt='cd $PRODUCT'
 alias ll='ls -l'
-alias mm='mvn clean compile | grep ERROR | grep -v "In "'
+alias mm='./bld.sh'
 alias gti='git'
+alias gut='git'
 alias antlr4='java -jar /usr/local/lib/antlr-4.0-complete.jar'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
 
@@ -38,10 +42,6 @@ alias grun='java org.antlr.v4.runtime.misc.TestRig'
 #Setting for the new UTF-8 terminal support in Lion
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-
-export DOCKERSRC=~/docker
-export VAGRANT_CWD=$DOCKERSRC
-export FORWARD_DOCKER_PORT=1
 
 
 ### ANTLR specific settings 
@@ -54,6 +54,11 @@ alias eclipse='/Users/rajeshnair/devenv/eclipse/eclipse'
 
 
 ### My own commands 
+function switchToJava8() {
+    export JAVA8_HOME=`/usr/libexec/java_home -v 1.8`
+    export JAVA_HOME=$JAVA8_HOME
+}
+
 function wamk() {
     echo "Compiling $1";
     cd $1;
@@ -112,3 +117,5 @@ function searchClassInJars {
         done
 }
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

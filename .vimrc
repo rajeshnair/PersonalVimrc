@@ -32,8 +32,10 @@ set encoding=utf-8
 
 " Set color scheme that I like.
 if has("gui_running")
+    set background=dark
     colorscheme desert
 else
+    set background=dark
     colorscheme desert
 endif
 
@@ -104,9 +106,10 @@ let g:DoxygenToolkit_authorName="Rajesh Nair <rajesh@webaction.com>"
 let g:DoxygenToolkit_licenseTag="This file and its content are copyright of WebAction Inc."  
 
 au FileType cpp set makeprg=mm\ make\ %:r.o
-"au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 au FileType sdl exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 au FileType oml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+
 
 function! DoPrettyXML()
   " save the filetype so we can restore it later
