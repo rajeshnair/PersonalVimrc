@@ -1,6 +1,6 @@
 all:	
-	ln -s /home/rajesh/projects/PersonalVimrc/.bashrc /home/rajesh/.bashrc	
-	ln -s /home/rajesh/projects/PersonalVimrc/.vimrc  /home/rajesh/.vimrc
-	ln -s /home/rajesh/projects/PersonalVimrc/.vim /home/rajesh/.vim
-	ln -s /home/rajesh/projects/PersonalVimrc/.git-completion.bash /home/rajesh/.git-completion.bash
-	ln -s /home/rajesh/projects/PersonalVimrc/git-prompt.sh /home/rajesh/.git-prompt.sh
+	ln -s /Users/rajeshnair/projects/PersonalVimrc/.bashrc /Users/rajeshnair/.bashrc	
+	ln -s /Users/rajeshnair/projects/PersonalVimrc/.vimrc  /Users/rajeshnair/.vimrc
+	ln -s /Users/rajeshnair/projects/PersonalVimrc/.vim /Users/rajeshnair/.vim
+	ln -s /Users/rajeshnair/projects/PersonalVimrc/.git-completion.bash /Users/rajeshnair/.git-completion.bash
+	ln -s /Users/rajeshnair/projects/PersonalVimrc/git-prompt.sh /Users/rajeshnair/.git-prompt.sh

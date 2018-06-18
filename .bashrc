@@ -5,19 +5,20 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-source /home/rajesh/projects/PersonalVimrc/.git-completion.bash
-source /home/rajesh/projects/PersonalVimrc/.git-prompt.sh
+source /Users/rajeshnair/projects/PersonalVimrc/.git-completion.bash
+source /Users/rajeshnair/projects/PersonalVimrc/.git-prompt.sh
 PS1='\t \W $(__git_ps1 " (%s)")\$ '
 
 
 # User specific aliases and functions
-
-export SPARK_HOME="/home/rajesh/installs/spark-1.4.0-bin-custom-spark"
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export SPARK_HOME="/Users/rajeshnair/installs/spark-1.4.0-bin-custom-spark"
 export ORACLE_HOME="/Applications/oracle/product/instantclient_64/11.2.0.4.0"
 export MAVEN_OPTS="-Xms128m -Xmx2048m -XX:MaxPermSize=1024m"
-export M2_HOME=/home/rajesh/devenv/apache-maven-3.2.5
+export M2_HOME=/Users/rajeshnair/devenv/apache-maven-3.2.5
 export M2=$M2_HOME/bin
-export PATH=$PATH:$M2:$ORACLE_HOME/bin:$SPARK_HOME/bin:$SPARK_HOME/sbin:/usr/local/octave/3.8.0/bin
+export PATH=$GOBIN:/usr/local/homebrew/bin:$PATH
 export DYLD_LIBRARY_PATH=$ORACLE_HOME/lib
 
 
@@ -26,7 +27,7 @@ export CLASSPATH=".:/usr/local/lib/antlr-4.0-complete.jar:$CLASSPATH"
 export DERBY_OPTS='-Dij.database="jdbc:derby://localhost:1527/wactionrepos;user=waction;password=waction;create=true"'
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
-export PRODUCT=/home/rajesh/go/src/gitlab.services.ams.osa/opera-mobile/opera-pay
+export PRODUCT=/Users/rajeshnair/go/src/gitlab.services.ams.osa/opera-mobile/opera-pay
 alias bt='cd $PRODUCT'
 alias ll='ls -l'
 alias mm='./bld.sh'
@@ -34,7 +35,7 @@ alias gti='git'
 alias gut='git'
 alias antlr4='java -jar /usr/local/lib/antlr-4.0-complete.jar'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
-
+alias vimgo='vim -u ~/.vimrc.go'
 
 #Setting for the new UTF-8 terminal support in Lion
 export LC_CTYPE=en_US.UTF-8
@@ -45,7 +46,7 @@ export LC_ALL=en_US.UTF-8
 export CLASSPATH=".:/usr/local/lib/antlr-4.0-complete.jar:$CLASSPATH"
 alias antlr4='java -jar /usr/local/lib/antlr-4.0-complete.jar'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
-alias eclipse='/home/rajesh/devenv/eclipse/eclipse'
+alias eclipse='/Users/rajeshnair/devenv/eclipse/eclipse'
 
 
 
