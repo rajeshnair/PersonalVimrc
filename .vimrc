@@ -109,7 +109,7 @@ au FileType cpp set makeprg=mm\ make\ %:r.o
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 au FileType sdl exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 au FileType oml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
-
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 function! DoPrettyXML()
   " save the filetype so we can restore it later
